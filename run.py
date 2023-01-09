@@ -12,8 +12,19 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
-inputs = SHEET.worksheet('inputs')
 
-data = inputs.get_all_values()
+def get_user_review():
+    """
+    Get movie review input from the user.
+    """
+    print("Please enter your movie review")
+    print("Your review should be ten numbers, seperated by commas.")
+    print("Example: 1,2,3,4,5,6,7,8,9,10\n")
 
-print(data)
+    user_review = input("Enter your data here: ")
+    print(f"The reviews provided are {user_review}")
+
+
+get_user_review()
+
+
