@@ -24,8 +24,23 @@ def get_user_review():
     review_str = input("Enter your data here: ")
 
     user_review = review_str.split(",")
+    validate_review(user_review)
 
-    print(f"The reviews provided are {user_review}")
+
+def validate_review(values):
+    """
+    Inside the try, converts all string values into integers.
+    Raises ValueError msg if strings cannot be converted into integers,
+    or if there aren't exctaly 10 values.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 10:
+            raise ValueError(
+                f"Exactly 10 values are required, you provided {len(values)}"
+            )
+    except ValueError as e:
+        print(f"Invalid data entered: {e}, please try again.\n")
 
 
 get_user_review()
