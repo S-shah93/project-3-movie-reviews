@@ -17,14 +17,19 @@ def get_user_review():
     """
     Get movie review input from the user.
     """
-    print("Please enter your movie review")
-    print("Your review should be ten numbers, seperated by commas.")
-    print("Example: 1,2,3,4,5,6,7,8,9,10\n")
+    while True:
+        print("Please enter your movie review")
+        print("Your review should be ten numbers, seperated by commas.")
+        print("Example: 1,2,3,4,5,6,7,8,9,10\n")
 
-    review_str = input("Enter your data here: ")
+        review_str = input("Enter your data here: ")
 
-    user_review = review_str.split(",")
-    validate_review(user_review)
+        user_review = review_str.split(",")
+
+        if validate_review(user_review):
+            print("Data is valid!")
+            break
+    return user_review
 
 
 def validate_review(values):
@@ -41,8 +46,23 @@ def validate_review(values):
             )
     except ValueError as e:
         print(f"Invalid data entered: {e}, please try again.\n")
+        return False
+
+    return True
 
 
-get_user_review()
+def update_inputs_worksheet(user_review):
+    """
+    Updates inputs worksheet, add new row with the users review.
+    """
+    print("Updating inputs worksheet...\n")
+    inputs_worksheet = SHEET.worksheet("inputs")
+    inputs_worksheet.append_row(user_review)
+    print("Your review has been upoaded sucessfully.\n")
+
+
+user_review = get_user_review()
+reviews_data = [int(num) for num in user_review]
+update_inputs_worksheet(reviews_data)
 
 
