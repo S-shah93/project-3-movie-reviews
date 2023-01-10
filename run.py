@@ -61,8 +61,14 @@ def update_inputs_worksheet(user_review):
     print("Your review has been upoaded sucessfully.\n")
 
 
-user_review = get_user_review()
-reviews_data = [int(num) for num in user_review]
-update_inputs_worksheet(reviews_data)
+def main():
+    """
+    Main function to run all programs.
+    """
+    user_review = get_user_review()
+    reviews_data = [int(num) for num in user_review]
+    update_inputs_worksheet(reviews_data)
 
 
+print("Welcome to Movie Reviews where your opinion is important to us!\n")
+main()
