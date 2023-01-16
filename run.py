@@ -26,10 +26,12 @@ def initial_choice():
             print(
                 f"You entered {initial_input_str}"
                 )
-            print("tesing 1")
+            get_user_review()
+            break
         if initial_input_str == "2":
             print(f"You entered {initial_input_str}")
-            print("testing 2")
+            display_user_reviews()
+            break
         print("You must choose between 1 or 2")
         break
 
@@ -80,6 +82,13 @@ def update_inputs_worksheet(user_review):
     inputs_worksheet = SHEET.worksheet("inputs")
     inputs_worksheet.append_row(user_review)
     print("Your review has been upoaded sucessfully.\n")
+
+
+def display_user_reviews():
+    """
+    Displays past user reviews based on users inputs.
+    """
+    print("display working")
 
 
 def main():
