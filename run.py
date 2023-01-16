@@ -112,20 +112,19 @@ def display_user_reviews():
     elif display_choice_str == "Lowest":
         print("Lowest rated movie")
     elif display_choice_str == "Age":
-        age_ratings = SHEET.worksheet("Age").get_all_records()
-        print(age_ratings)
+        age_ratings = SHEET.worksheet("Age")
+        age_table = pd.DataFrame(age_ratings.get_all_records())
+        print(age_table)
         print("\n")
     elif display_choice_str == "Lenght":
-        lenghts = SHEET.worksheet("Lenght").get_all_records()
-        print(lenghts)
+        lenghts = SHEET.worksheet("Lenght")
+        lenghts_table = pd.DataFrame(lenghts.get_all_records())
+        print(lenghts_table)
         print("\n")
     elif display_choice_str == "Upcoming":
         upcoming = SHEET.worksheet("upcoming")
-        df = pd.DataFrame(upcoming.get_all_records())
-        # upcoming_list = df.head(upcoming)
-        # print(upcoming_list)
-        # upcoming_list = pd.DataFrame(upcoming)
-        print(df)
+        upcoming_table = pd.DataFrame(upcoming.get_all_records())
+        print(upcoming_table)
         print("\n")
     else:
         print(f"You entered {display_choice_str}")
