@@ -95,6 +95,8 @@ def display_user_reviews():
     print("Enter: Lenght to review movie lenghts\n")
     print("Enter: Age to review movie age limits\n")
 
+    display_choice = input("Enter your desired statistic: \n")
+
 
 def main():
     """
