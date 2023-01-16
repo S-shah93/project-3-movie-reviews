@@ -99,10 +99,11 @@ def display_user_reviews():
     Displays past user reviews based on users inputs.
     """
     print("Please enter your desired movie statistic\n")
-    print("Enter: Top to review movie with highest rating\n")
-    print("Enter: Lowest to review movie with lowest rating\n")
-    print("Enter: Lenght to review movie lenghts\n")
-    print("Enter: Age to review movie age limits\n")
+    print("Enter: 'Top' to review movie with highest rating\n")
+    print("Enter: 'Lowest' to review movie with lowest rating\n")
+    print("Enter: 'Lenght' to review movie lenghts\n")
+    print("Enter: 'Age' to review movie age limits\n")
+    print("Enter: 'Upcoming' to review upcoming movies in 2023\n")
 
     display_choice_str = input("Enter your desired statistic: \n")
 
