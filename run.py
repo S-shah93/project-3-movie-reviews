@@ -109,10 +109,15 @@ def display_user_reviews():
     elif display_choice_str == "Age":
         age_ratings = SHEET.worksheet("Age").get_all_records()
         print(age_ratings)
+        print("\n")
     elif display_choice_str == "Lenght":
-        print("Lenght of all movies")
+        lenghts = SHEET.worksheet("Lenght").get_all_records()
+        print(lenghts)
+        print("\n")
     elif display_choice_str == "Upcoming":
-        print("Upcoming movies in 2023")
+        upcoming = SHEET.worksheet("upcoming").get_all_records()
+        print(upcoming)
+        print("\n")
     else:
         print(f"You entered {display_choice_str}")
         print("Input invalid you must input one of the available options")
