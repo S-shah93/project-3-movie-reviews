@@ -100,20 +100,23 @@ def display_user_reviews():
     print("Enter: Lenght to review movie lenghts\n")
     print("Enter: Age to review movie age limits\n")
 
-    display_choice = input("Enter your desired statistic: \n")
+    display_choice_str = input("Enter your desired statistic: \n")
 
-    if display_choice == "Top":
+    if display_choice_str == "Top":
         print("Top movie")
-    elif display_choice == "Lowest":
+    elif display_choice_str == "Lowest":
         print("Lowest rated movie")
-    elif display_choice == "Age":
+    elif display_choice_str == "Age":
         print("Age limits for each movie")
-    elif display_choice == "Lenght":
+    elif display_choice_str == "Lenght":
         print("Lenght of all movies")
-    elif display_choice == "Upcoming":
+    elif display_choice_str == "Upcoming":
         print("Upcoming movies in 2023")
     else:
-        print("Invalid")
+        print(f"You entered {display_choice_str}")
+        print("Input invalid you must input one of the available options")
+        print("'Top' 'Lowest' 'Age' 'Lenght' or 'Upcoming'")
+        return display_user_reviews()
 
     print("Thank you for viewing\n")
     print("Please run program again to view or review")
