@@ -52,6 +52,7 @@ def get_user_review():
 
         if validate_review(user_review):
             print("Data is valid!")
+            update_inputs_worksheet(user_review)
             break
     return user_review
 
@@ -96,6 +97,19 @@ def display_user_reviews():
     print("Enter: Age to review movie age limits\n")
 
     display_choice = input("Enter your desired statistic: \n")
+
+    if display_choice == "Top":
+        print("Top movie")
+    elif display_choice == "Lowest":
+        print("Lowest rated movie")
+    elif display_choice == "Age":
+        print("Age limits for each movie")
+    elif display_choice == "Lenght":
+        print("Lenght of all movies")
+    elif display_choice == "Upcoming":
+        print("Upcoming movies in 2023")
+    else:
+        print("Invalid")
 
 
 def main():
