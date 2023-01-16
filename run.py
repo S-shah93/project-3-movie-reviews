@@ -56,7 +56,9 @@ def get_user_review():
 
         if validate_review(user_review):
             print("Data is valid!")
-            update_inputs_worksheet(user_review)
+            reviews_data = [int(num) for num in user_review]
+            update_inputs_worksheet(reviews_data)
+            # update_inputs_worksheet(user_review)
             break
         return user_review
 
