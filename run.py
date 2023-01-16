@@ -29,11 +29,13 @@ def initial_choice():
                 )
             get_user_review()
             break
-        if initial_input_str == "2":
+        elif initial_input_str == "2":
             print(f"You entered {initial_input_str}")
             display_user_reviews()
             break
-        print("You must choose between 1 or 2")
+        else:
+            print("You must choose between 1 or 2")
+            return initial_choice()
         break
 
 
