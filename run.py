@@ -59,6 +59,7 @@ def get_user_review():
             update_inputs_worksheet(user_review)
             break
         return user_review
+
     print("Thank you for your review\n")
     print("Please run program again to view or review")
 
@@ -77,6 +78,7 @@ def validate_review(values):
             )
     except ValueError as e:
         print(f"Invalid data entered: {e}, please try again.\n")
+        get_user_review()
         return False
 
     return True
