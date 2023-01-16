@@ -109,7 +109,6 @@ def display_user_reviews():
     elif display_choice == "Upcoming":
         print("Upcoming movies in 2023")
     else:
-        
         print("Invalid")
 
 
