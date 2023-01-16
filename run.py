@@ -21,6 +21,7 @@ def initial_choice():
     print("Press '1' to input review or '2' to review reviews")
 
     initial_input_str = input("Enter 1 or 2: \n")
+
     while True:
         if initial_input_str == "1":
             print(
@@ -88,7 +89,11 @@ def display_user_reviews():
     """
     Displays past user reviews based on users inputs.
     """
-    print("display working")
+    print("Please enter your desired movie statistic\n")
+    print("Enter: Top to review movie with highest rating\n")
+    print("Enter: Lowest to review movie with lowest rating\n")
+    print("Enter: Lenght to review movie lenghts\n")
+    print("Enter: Age to review movie age limits\n")
 
 
 def main():
