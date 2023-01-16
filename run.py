@@ -50,7 +50,7 @@ def get_user_review():
         print("Your review should be ten numbers, seperated by commas.")
         print("Example: 1,2,3,4,5,6,7,8,9,10\n")
 
-        review_str = input("Enter your data here: ")
+        review_str = input("Enter your data here: \n")
 
         user_review = review_str.split(",")
 
