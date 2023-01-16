@@ -13,6 +13,27 @@ GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
 
+def initial_choice():
+    """
+    Allows user to input review or view past reviews
+    """
+    print("Would you like to input a review or view past reviews")
+    print("Press '1' to input review or '2' to review reviews")
+
+    initial_input_str = input("Enter 1 or 2: \n")
+    while True:
+        if initial_input_str == "1":
+            print(
+                f"You entered {initial_input_str}"
+                )
+            print("tesing 1")
+        if initial_input_str == "2":
+            print(f"You entered {initial_input_str}")
+            print("testing 2")
+        print("You must choose between 1 or 2")
+        break
+
+
 def get_user_review():
     """
     Get movie review input from the user.
@@ -65,9 +86,7 @@ def main():
     """
     Main function to run all programs.
     """
-    user_review = get_user_review()
-    reviews_data = [int(num) for num in user_review]
-    update_inputs_worksheet(reviews_data)
+    initial_choice()
 
 
 print("Welcome to Movie Reviews where your opinion is important to us!\n")
