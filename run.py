@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+import pandas as pd
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -115,8 +116,12 @@ def display_user_reviews():
         print(lenghts)
         print("\n")
     elif display_choice_str == "Upcoming":
-        upcoming = SHEET.worksheet("upcoming").get_all_records()
-        print(upcoming)
+        upcoming = SHEET.worksheet("upcoming")
+        df = pd.DataFrame(upcoming.get_all_records())
+        # upcoming_list = df.head(upcoming)
+        # print(upcoming_list)
+        # upcoming_list = pd.DataFrame(upcoming)
+        print(df)
         print("\n")
     else:
         print(f"You entered {display_choice_str}")
