@@ -56,7 +56,9 @@ def get_user_review():
             print("Data is valid!")
             update_inputs_worksheet(user_review)
             break
-    return user_review
+        return user_review
+    print("Thank you for your review\n")
+    print("Please run program again to view or review")
 
 
 def validate_review(values):
@@ -112,6 +114,9 @@ def display_user_reviews():
         print("Upcoming movies in 2023")
     else:
         print("Invalid")
+
+    print("Thank you for viewing\n")
+    print("Please run program again to view or review")
 
 
 def main():
