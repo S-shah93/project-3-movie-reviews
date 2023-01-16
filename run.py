@@ -107,10 +107,8 @@ def display_user_reviews():
     elif display_choice_str == "Lowest":
         print("Lowest rated movie")
     elif display_choice_str == "Age":
-        age_titles = SHEET.worksheet("Age").get_all_records()
-        # age_info = SHEET.worksheet("Age").row_values(2)
-        print(age_titles)
-        # print(age_info)
+        age_ratings = SHEET.worksheet("Age").get_all_records()
+        print(age_ratings)
     elif display_choice_str == "Lenght":
         print("Lenght of all movies")
     elif display_choice_str == "Upcoming":
