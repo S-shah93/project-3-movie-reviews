@@ -41,6 +41,7 @@ def initial_choice():
         break
     again()
 
+
 def get_user_review():
     """
     Get movie review input from the user.
@@ -151,7 +152,7 @@ def again():
     """
     print("If you would like to run this survey again enter 'Run' ")
     print("If you would like to end this survey enter 'End' ")
-    run_again_str = input("Enter 'Yes' or 'No' : \n")
+    run_again_str = input("Enter 'Run' or 'End' : \n")
 
     if run_again_str == "Run":
         initial_choice()
