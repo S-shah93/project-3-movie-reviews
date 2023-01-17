@@ -140,7 +140,7 @@ def display_user_reviews():
         print(f"You entered {display_choice_str}")
         print("Input invalid you must input one of the available options")
         print("'Top' 'Lowest' 'Age' 'Lenght' or 'Upcoming'")
-        return display_user_reviews()
+        display_user_reviews()
     again()
     print("Thank you for viewing\n")
     print("Please run program again to view or review")
