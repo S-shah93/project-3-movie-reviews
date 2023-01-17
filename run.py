@@ -39,7 +39,7 @@ def initial_choice():
             print("You must choose between 1 or 2")
             return initial_choice()
         break
-
+    again()
 
 def get_user_review():
     """
@@ -58,6 +58,7 @@ def get_user_review():
             print("Data is valid!")
             reviews_data = [int(num) for num in user_review]
             update_inputs_worksheet(reviews_data)
+            again()
             break
         return user_review
 
@@ -139,7 +140,7 @@ def display_user_reviews():
         print("Input invalid you must input one of the available options")
         print("'Top' 'Lowest' 'Age' 'Lenght' or 'Upcoming'")
         return display_user_reviews()
-
+    again()
     print("Thank you for viewing\n")
     print("Please run program again to view or review")
 
@@ -167,7 +168,6 @@ def main():
     Main function to run all programs.
     """
     initial_choice()
-    again()
 
 
 print("Welcome to Movie Reviews where your opinion is important to us!\n")
