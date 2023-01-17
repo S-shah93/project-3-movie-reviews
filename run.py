@@ -144,11 +144,30 @@ def display_user_reviews():
     print("Please run program again to view or review")
 
 
+def again():
+    """
+    again function allows user to run program again inside the terminal
+    """
+    print("If you would like to run this survey again enter 'Run' ")
+    print("If you would like to end this survey enter 'End' ")
+    run_again_str = input("Enter 'Yes' or 'No' : \n")
+
+    if run_again_str == "Run":
+        initial_choice()
+    elif run_again_str == "End":
+        quit()
+    else:
+        print(f"You entered {run_again_str}")
+        print(f"Invalid data entered: {run_again_str}, please try again.\n")
+        again()
+
+
 def main():
     """
     Main function to run all programs.
     """
     initial_choice()
+    again()
 
 
 print("Welcome to Movie Reviews where your opinion is important to us!\n")
