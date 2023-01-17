@@ -107,11 +107,11 @@ def display_user_reviews():
     print("Enter: 'Upcoming' to review upcoming movies in 2023\n")
 
     display_choice_str = input("Enter your desired statistic: \n")
+    print("\n")
 
     if display_choice_str == "Highest":
         highest_rated_movie = SHEET.worksheet("highest")
         highest_table = pd.DataFrame(highest_rated_movie.get_all_records())
-        # sort_table = pd.dataframe.max(1, 2)(top_table)
         print(highest_table.to_string(index=False))
         print("\n")
     elif display_choice_str == "Lowest":
