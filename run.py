@@ -58,7 +58,6 @@ def get_user_review():
             print("Data is valid!")
             reviews_data = [int(num) for num in user_review]
             update_inputs_worksheet(reviews_data)
-            # update_inputs_worksheet(user_review)
             break
         return user_review
 
@@ -101,7 +100,7 @@ def display_user_reviews():
     Displays past user reviews based on users inputs.
     """
     print("Please enter your desired movie statistic\n")
-    print("Enter: 'Top' to review movie with highest rating\n")
+    print("Enter: 'Highest' to review movie with highest rating\n")
     print("Enter: 'Lowest' to review movie with lowest rating\n")
     print("Enter: 'Lenght' to review movie lenghts\n")
     print("Enter: 'Age' to review movie age limits\n")
@@ -109,8 +108,12 @@ def display_user_reviews():
 
     display_choice_str = input("Enter your desired statistic: \n")
 
-    if display_choice_str == "Top":
-        print("Top movie")
+    if display_choice_str == "Highest":
+        highest_rated_movie = SHEET.worksheet("highest")
+        highest_table = pd.DataFrame(highest_rated_movie.get_all_records())
+        # sort_table = pd.dataframe.max(1, 2)(top_table)
+        print(highest_table.to_string(index=False))
+        print("\n")
     elif display_choice_str == "Lowest":
         print("Lowest rated movie")
     elif display_choice_str == "Age":
