@@ -1,6 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
+import pandas as pd
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -73,12 +73,13 @@ def current_ratings():
     """
     print("Test 1")
     m_titles = SHEET.worksheet("current")
-    title_list = m_titles.get_all_values()
-    print(title_list)
+    title_list = pd.DataFrame(m_titles.get_all_values())
+    print(title_list.to_string(index=False))
 
     print("Please see options below")
     print("1: Add your rating")
     print("2: Search specific movie")
+    print("3: See main menu again")
     print("0: End program")
 
     c_ratings_choice = input("Enter a number between 0 - 1\n")
@@ -87,6 +88,8 @@ def current_ratings():
         m_add()
     elif c_ratings_choice == "2":
         m_search()
+    elif c_ratings_choice == "3":
+        interface()
     elif c_ratings_choice == "0":
         print("Thank you for visiting!")
         print("Goodbye")
@@ -94,7 +97,6 @@ def current_ratings():
         print(f"Invalid choice, you entered {c_ratings_choice}\n")
         print("Please choose a number between 0 - 2")
         current_ratings()
-
 
 
 def m_search():
