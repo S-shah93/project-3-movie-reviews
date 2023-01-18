@@ -23,7 +23,7 @@ def interface():
     print("Please see the available options below.\n")
     while True:
         print("\n")
-        print("1: List of movies")
+        print("1: Current Rankings")
         print("2: Search for a movie")
         print("3: Add a movie to list")
         print("4: Add movie rating")
@@ -36,7 +36,7 @@ def interface():
 
         if user_choice == "1":
             print(f"You entered {user_choice}")
-            m_list()
+            current_ratings()
             break
         elif user_choice == "2":
             m_search()
@@ -67,11 +67,34 @@ def interface():
             main()
 
 
-def m_list():
+def current_ratings():
     """
     Function to list all movies
     """
     print("Test 1")
+    m_titles = SHEET.worksheet("current")
+    title_list = m_titles.get_all_values()
+    print(title_list)
+
+    print("Please see options below")
+    print("1: Add your rating")
+    print("2: Search specific movie")
+    print("0: End program")
+
+    c_ratings_choice = input("Enter a number between 0 - 1\n")
+
+    if c_ratings_choice == "1":
+        m_add()
+    elif c_ratings_choice == "2":
+        m_search()
+    elif c_ratings_choice == "0":
+        print("Thank you for visiting!")
+        print("Goodbye")
+    else:
+        print(f"Invalid choice, you entered {c_ratings_choice}\n")
+        print("Please choose a number between 0 - 2")
+        current_ratings()
+
 
 
 def m_search():
