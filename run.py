@@ -103,23 +103,6 @@ def m_search():
     """
     Function to search for movies
     """
-    print("Test 2")
-    m_listings = SHEET.worksheet("listings")
-    m_list = m_listings.get_all_values()
-
-
-def m_add():
-    """
-    Function to add a movie to the list
-    """
-    print("Test 3")
-
-
-def m_rating():
-    """
-    Function allows user to rate movie from 1 - 5
-    """
-    print("Test 4")
 
 
 def m_comment():
@@ -135,6 +118,28 @@ def m_top():
     """
     print("Test 6")
 
+    top_movie = SHEET.worksheet("highest")
+    top_table = pd.DataFrame(top_movie.get_all_records())
+    print(top_table.to_string(index=False))
+    print("\n")
+
+    print("1: See lowest rated")
+    print("2: See main menu")
+    print("0: End program\n")
+
+    m_top_choice = input("Enter a number between 0 - 2\n")
+
+    if m_top_choice == "1":
+        m_lowest()
+    elif m_top_choice == "2":
+        interface()
+    elif m_top_choice == "0":
+        print("Thank you for visiting!")
+        print("Goodbye")
+    else:
+        print(f"Invalid choice, you entered {m_top_choice}\n")
+        print("Please choose a number between 0 - 2")
+        m_top()
 
 def m_lowest():
     """
