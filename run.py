@@ -15,9 +15,83 @@ GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
 
+def interface():
+    """
+    This function allows the user to navigate through
+    the entire program.
+    """
+    print("\n")
+    print("Please see the available options below.\n")
+    while True:
+        print("\n")
+        print("1: List of movies")
+        print("2: Search for a movie")
+        print("3: Add a movie rating")
+        print("4: Top rated movie")
+        print("5: Lowest rated movie")
+        print("0: End program")
+
+        user_choice == input("Enter your choice: \n")
+
+        if user_choice == "1":
+            m_list()
+        elif user_choice == "2":
+            m_search()
+        elif user_choice == "3":
+            m_add()
+        elif user_choice == "4":
+            m_top()
+        elif user_choice == "5":
+            m_lowest()
+        elif user_choice == "0":
+            interface()
+        else:
+            print(f"'You provided {user_choice}")
+            print("Invalid choice made.")
+            print("Please choose a number between 0 - 5")
+            main()
+
+
+def m_list():
+    """
+    Function to list all movies
+    """
+
+
+def m_search():
+    """
+    Function to search for movies
+    """
+
+
+def m_add():
+    """
+    Function to add a movie to the list
+    """
+
+
+def m_top():
+    """
+    Function to search the top rated movie
+    """
+
+
+def m_lowest():
+    """
+    Function to search for the lowest rated
+    """
+
+
+def main():
+    """
+    Function to run all functions
+    """
+
+
+"""
 def initial_choice():
     """
-    Allows user to input review or view past reviews
+    # Allows user to input review or view past reviews
     """
     print("Would you like to input a review or view past reviews")
     print("Press '1' to input review or '2' to review reviews")
@@ -42,9 +116,12 @@ def initial_choice():
     again()
 
 
+
+
+
 def get_user_review():
     """
-    Get movie review input from the user.
+    # Get movie review input from the user.
     """
     while True:
         print("Please enter your movie review")
@@ -69,9 +146,9 @@ def get_user_review():
 
 def validate_review(values):
     """
-    Inside the try, converts all string values into integers.
-    Raises ValueError msg if strings cannot be converted into integers,
-    or if there aren't exctaly 10 values.
+    # Inside the try, converts all string values into integers.
+    # Raises ValueError msg if strings cannot be converted into integers,
+    # or if there aren't exctaly 10 values.
     """
     try:
         [int(value) for value in values]
@@ -79,8 +156,8 @@ def validate_review(values):
             raise ValueError(
                 f"Exactly 10 values are required, you provided {len(values)}"
             )
-    except ValueError as e:
-        print(f"Invalid data entered: {e}, please try again.\n")
+    except ValueError as er:
+        print(f"Invalid data entered: {er}, please try again.\n")
         get_user_review()
         return False
 
@@ -89,7 +166,7 @@ def validate_review(values):
 
 def update_inputs_worksheet(user_review):
     """
-    Updates inputs worksheet, add new row with the users review.
+    # Updates inputs worksheet, add new row with the users review.
     """
     print("Updating inputs worksheet...\n")
     inputs_worksheet = SHEET.worksheet("inputs")
@@ -99,7 +176,7 @@ def update_inputs_worksheet(user_review):
 
 def display_user_reviews():
     """
-    Displays past user reviews based on users inputs.
+    # Displays past user reviews based on users inputs.
     """
     print("Please enter your desired movie statistic\n")
     print("Enter: 'Highest' to review movie with highest rating\n")
@@ -148,7 +225,7 @@ def display_user_reviews():
 
 def again():
     """
-    again function allows user to run program again inside the terminal
+    # again function allows user to run program again inside the terminal
     """
     print("If you would like to run this survey again enter 'Run' ")
     print("If you would like to end this survey enter 'End' ")
@@ -166,10 +243,11 @@ def again():
 
 def main():
     """
-    Main function to run all programs.
+    # Main function to run all programs.
     """
     initial_choice()
 
 
 print("Welcome to Movie Reviews where your opinion is important to us!\n")
 main()
+"""
