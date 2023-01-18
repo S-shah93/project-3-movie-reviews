@@ -73,7 +73,7 @@ def current_ratings():
     """
     print("Test 1")
     m_titles = SHEET.worksheet("current")
-    title_list = pd.DataFrame(m_titles.get_all_values())
+    title_list = pd.DataFrame(m_titles.get_all_records())
     print(title_list.to_string(index=False))
 
     print("Please see options below")
@@ -104,6 +104,8 @@ def m_search():
     Function to search for movies
     """
     print("Test 2")
+    m_listings = SHEET.worksheet("listings")
+    m_list = m_listings.get_all_values()
 
 
 def m_add():
