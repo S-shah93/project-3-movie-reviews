@@ -141,11 +141,35 @@ def m_top():
         print("Please choose a number between 0 - 2")
         m_top()
 
+
 def m_lowest():
     """
     Function to search for the lowest rated
     """
     print("Test 7")
+
+    lowest_movie = SHEET.worksheet("lowest")
+    lowest_table = pd.DataFrame(lowest_movie.get_all_records())
+    print(lowest_table.to_string(index=False))
+    print("\n")
+
+    print("1: See highest rated")
+    print("2: See main menu")
+    print("0: End program\n")
+
+    m_lowest_choice = input("Enter a number between 0 - 2\n")
+
+    if m_lowest_choice == "1":
+        m_top()
+    elif m_lowest_choice == "2":
+        interface()
+    elif m_lowest_choice == "0":
+        print("Thank you for visiting!")
+        print("Goodbye")
+    else:
+        print(f"Invalid choice, you entered {m_lowest_choice}\n")
+        print("Please choose a number between 0 - 2")
+        m_lowest()
 
 
 def main():
