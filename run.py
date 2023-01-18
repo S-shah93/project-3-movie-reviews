@@ -24,12 +24,11 @@ def interface():
     while True:
         print("\n")
         print("1: Current Rankings")
-        print("2: Search for a movie")
-        print("3: Add a movie to list")
-        print("4: Add movie rating")
-        print("5: Leave comment for movie")
-        print("6: Top rated movie")
-        print("7: Lowest rated movie")
+        print("2: Add movie rating to current list")
+        print("3: Request a movie to be added to the list")
+        print("4: Leave comment for movie")
+        print("5: Top rated movie")
+        print("6: Lowest rated movie")
         print("0: End program")
 
         user_choice = input("Enter your choice: \n")
@@ -39,21 +38,18 @@ def interface():
             current_ratings()
             break
         elif user_choice == "2":
-            m_search()
+            add_rating()
             break
         elif user_choice == "3":
-            m_add()
+            add_to_list()
             break
         elif user_choice == "4":
-            m_rating()
-            break
-        elif user_choice == "5":
             m_comment()
             break
-        elif user_choice == "6":
+        elif user_choice == "5":
             m_top()
             break
-        elif user_choice == "7":
+        elif user_choice == "6":
             m_lowest()
             break
         elif user_choice == "0":
@@ -78,16 +74,16 @@ def current_ratings():
 
     print("Please see options below")
     print("1: Add your rating")
-    print("2: Search specific movie")
+    print("2: Request movie to be added")
     print("3: See main menu again")
     print("0: End program")
 
     c_ratings_choice = input("Enter a number between 0 - 1\n")
 
     if c_ratings_choice == "1":
-        m_add()
+        add_rating()
     elif c_ratings_choice == "2":
-        m_search()
+        add_to_list()
     elif c_ratings_choice == "3":
         interface()
     elif c_ratings_choice == "0":
@@ -104,6 +100,73 @@ def m_search():
     Function to search for movies
     """
 
+
+def add_rating():
+    """
+    # Get movie review input from the user.
+    """
+    while True:
+        print("Please enter your movie review")
+        print("Your review should be ten numbers, seperated by commas.")
+        print("Example: 1,2,3,4,5,6,7,8,9,10\n")
+
+        review_str = input("Enter your data here: \n")
+
+        user_review = review_str.split(",")
+
+        if validate_rating(user_review):
+            print("Data is valid!")
+            reviews_data = [int(num) for num in user_review]
+            update_inputs_worksheet(reviews_data)
+            break
+        return user_review
+
+    print("Thank you for your review\n")
+    print("Please run program again to view or review")
+
+
+def validate_rating(values):
+    """
+    # Inside the try, converts all string values into integers.
+    # Raises ValueError msg if strings cannot be converted into integers,
+    # or if there aren't exctaly 10 values.
+    """
+    try:
+        [int(value) for value in values]
+        if len(values) != 10:
+            raise ValueError(
+                f"Exactly 10 values are required, you provided {len(values)}"
+                )
+        elif range(1, 10):
+            raise ValueError(
+                f"Choose numbers between 1 - 10, you provided {values}"
+                )
+        else:
+            print(f"You provided {values}")
+            print("Please input a number between 1 - 10")
+    except ValueError as er:
+        print(f"Invalid data entered: {er}, please try again.\n")
+        add_rating()
+        return False
+
+    return True
+
+
+def update_inputs_worksheet(user_review):
+    """
+    # Updates inputs worksheet, add new row with the users review.
+    """
+    print("Updating inputs worksheet...\n")
+    inputs_worksheet = SHEET.worksheet("inputs")
+    inputs_worksheet.append_row(user_review)
+    print("Your review has been upoaded sucessfully.\n")
+
+
+def add_to_list():
+    """
+    Function to request a movie to be added to the list.
+    """
+    
 
 def m_comment():
     """
