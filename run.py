@@ -26,9 +26,11 @@ def interface():
         print("\n")
         print("1: List of movies")
         print("2: Search for a movie")
-        print("3: Add a movie rating")
-        print("4: Top rated movie")
-        print("5: Lowest rated movie")
+        print("3: Add a movie to list")
+        print("4: Add movie rating")
+        print("5: Leave comment for movie")
+        print("6: Top rated movie")
+        print("7: Lowest rated movie")
         print("0: End program")
 
         user_choice == input("Enter your choice: \n")
@@ -40,8 +42,12 @@ def interface():
         elif user_choice == "3":
             m_add()
         elif user_choice == "4":
-            m_top()
+            m_rating()
         elif user_choice == "5":
+            m_comment()
+        elif user_choice == "6":
+            m_top()
+        elif user_choice == "7":
             m_lowest()
         elif user_choice == "0":
             interface()
@@ -69,6 +75,17 @@ def m_add():
     Function to add a movie to the list
     """
 
+def m_rating():
+    """
+    Function allows user to rate movie from 1 - 5
+    """
+
+
+def m_comment():
+    """
+    Function allows user leave a comment for a movie
+    """
+
 
 def m_top():
     """
@@ -80,7 +97,6 @@ def m_lowest():
     """
     Function to search for the lowest rated
     """
-
 
 def main():
     """
