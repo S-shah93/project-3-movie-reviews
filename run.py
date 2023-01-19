@@ -101,7 +101,7 @@ def current_ratings():
         print("Goodbye")
     else:
         print(f"Invalid choice, you entered {c_ratings_choice}\n")
-        print("Please choose a number between 0 - 2")
+        print("Please choose a number between 0 - 3")
         current_ratings()
 
 
@@ -283,7 +283,7 @@ def m_top():
         print("Goodbye")
     else:
         print(f"Invalid choice, you entered {m_top_choice}\n")
-        print("Please choose a number between 0 - 2")
+        print("Please choose a number between 0 - 3")
         m_top()
 
 
@@ -318,7 +318,7 @@ def m_lowest():
         print("Goodbye")
     else:
         print(f"Invalid choice, you entered {m_lowest_choice}\n")
-        print("Please choose a number between 0 - 2")
+        print("Please choose a number between 0 - 3")
         m_lowest()
 
 
