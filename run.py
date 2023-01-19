@@ -195,6 +195,7 @@ def update_inputs_worksheet(user_review):
     print("Your review has been upoaded sucessfully.\n")
 
 
+# Allows user to request a movie to be added to the list
 def add_to_list():
     """
     Function to requests a movie to be added to the list.
@@ -203,8 +204,10 @@ def add_to_list():
         print("Please enter your request below")
         print("We will update the rankings list in the next update")
 
+        # Users input request for movie title
         user_request = input("Enter your movie title here: \n")
 
+        # Updates users input to google sheet
         print(f"You entered {user_request}\n")
         print("Thank you for your request\n")
         print("We will review your request and add it to our list.\n")
@@ -213,8 +216,30 @@ def add_to_list():
             user_title = [str(value) for value in user_request]
             update_requests_worksheet(user_title)
             break
-
         return user_request
+    
+    # Options for users after input is complete
+    print("\n")
+    print("Please see options below")
+    print("1: Request another movie")
+    print("2: See main menu again")
+    print("0: End program")
+
+    # Users input after adding to the list
+    c_ratings_choice = input("Enter a number between 0 - 1\n")
+
+    # Validates users input after adding to the list
+    if c_ratings_choice == "1":
+        add_to_list()
+    elif c_ratings_choice == "2":
+        interface()
+    elif c_ratings_choice == "0":
+        print("Thank you for visiting!")
+        print("Goodbye")
+    else:
+        print(f"Invalid choice, you entered {c_ratings_choice}\n")
+        print("Please choose a number between 0 - 2")
+        current_ratings()
 
 
 # Updates google sheets with users inputs
@@ -226,33 +251,6 @@ def update_requests_worksheet(user_title):
     requests_worksheet = SHEET.worksheet("requests")
     requests_worksheet.append_row(user_title)
     print("Your review has been upoaded sucessfully.\n")
-
-
-def validate_title(values):
-    """
-    # Inside the try, converts all string values into integers.
-    # Raises ValueError msg if strings cannot be converted into integers,
-    # or if there aren't exctaly 10 values.
-    """
-    try:
-        [int(value) for value in values]
-        if len(values) != 10:
-            raise ValueError(
-                f"Exactly 10 values are required, you provided {len(values)}"
-                )
-        elif range(1, 10):
-            raise ValueError(
-                f"Choose numbers between 1 - 10, you provided {values}"
-                )
-        else:
-            print(f"You provided {values}")
-            print("Please input a number between 1 - 10")
-    except ValueError as er:
-        print(f"Invalid data entered: {er}, please try again.\n")
-        add_rating()
-        return False
-
-    return True
 
 
 def m_top():
