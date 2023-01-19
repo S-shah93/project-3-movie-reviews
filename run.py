@@ -258,16 +258,19 @@ def m_top():
     """
     Function to see the top rated movie
     """
+    # Displays the highest rated movie in the current list
     top_movie = SHEET.worksheet("highest")
     top_table = pd.DataFrame(top_movie.get_all_records())
     print(top_table.to_string(index=False))
     print("\n")
 
+    # Options for after viewing the highest rated movie
     print("1: See lowest rated")
-    print("2: Add rating to current list\n")
+    print("2: Add your rating to the current list\n")
     print("3: See main menu")
     print("0: End program\n")
 
+    # Users input for options above
     m_top_choice = input("Enter a number between 0 - 2\n")
 
     if m_top_choice == "1":
@@ -285,24 +288,31 @@ def m_top():
         m_top()
 
 
+# Function to display lowest rated movie in current list
 def m_lowest():
     """
     Function to search for the lowest rated
     """
+    # Displays lowest rated movie in current list
     lowest_movie = SHEET.worksheet("lowest")
     lowest_table = pd.DataFrame(lowest_movie.get_all_records())
     print(lowest_table.to_string(index=False))
     print("\n")
 
+    # Options for after viewing the lowest rated movie 
     print("1: See highest rated")
+    print("2: Add your rating to the current list")
     print("2: See main menu")
     print("0: End program\n")
 
+    # Users input for options above
     m_lowest_choice = input("Enter a number between 0 - 2\n")
 
     if m_lowest_choice == "1":
         m_top()
     elif m_lowest_choice == "2":
+        add_rating()
+    elif m_lowest_choice == "3":
         interface()
     elif m_lowest_choice == "0":
         print("Thank you for visiting!")
@@ -312,7 +322,7 @@ def m_lowest():
         print("Please choose a number between 0 - 2")
         m_lowest()
 
-
+# Main function to run program
 def main():
     """
     Function to run all functions
