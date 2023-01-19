@@ -184,9 +184,10 @@ def validate_rating(values):
     return True
 
 
+# Updates google sheets with users inputs
 def update_inputs_worksheet(user_review):
     """
-    # Updates inputs worksheet, add new row with the users review.
+    # Updates inputs worksheet, add new row with the users rating.
     """
     print("Updating inputs worksheet...\n")
     inputs_worksheet = SHEET.worksheet("inputs")
@@ -204,18 +205,19 @@ def add_to_list():
 
         user_request = input("Enter your movie title here: \n")
 
-        print(f"You entered {user_request}")
+        print(f"You entered {user_request}\n")
+        print("Thank you for your request\n")
+        print("We will review your request and add it to our list.\n")
         if user_request is True:
-            print("Data is valid!")
+            print("Data is valid!\n")
             user_title = [str(value) for value in user_request]
             update_requests_worksheet(user_title)
             break
-        else:
-            print("invalid data entered")
-            return True
+
         return user_request
 
 
+# Updates google sheets with users inputs
 def update_requests_worksheet(user_title):
     """
     Updates requests worksheet
