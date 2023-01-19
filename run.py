@@ -13,6 +13,8 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
+# This function acts as the main menu
+
 
 def interface():
     """
@@ -22,41 +24,50 @@ def interface():
     print("\n")
     print("Please see the available options below.\n")
     while True:
+        # List of available options in the main menu
         print("\n")
         print("1: Current Rankings")
         print("2: Add movie rating to current list")
         print("3: Request a movie to be added to the list")
-
         print("4: Top rated movie")
         print("5: Lowest rated movie")
         print("0: End program")
 
+        # Users initial input choice
+
         user_choice = input("Enter your choice: \n")
 
+        # Validates users input for main menu
+
         if user_choice == "1":
-            print(f"You entered {user_choice}")
+            print(f"You entered {user_choice}\n")
             current_ratings()
             break
         elif user_choice == "2":
+            print(f"You entered {user_choice}\n")
             add_rating()
             break
         elif user_choice == "3":
+            print(f"You entered {user_choice}\n")
             add_to_list()
             break
         elif user_choice == "4":
+            print(f"You entered {user_choice}\n")
             m_top()
             break
         elif user_choice == "5":
+            print(f"You entered {user_choice}\n")
             m_lowest()
             break
         elif user_choice == "0":
-            print("Heading to the initial interface")
-            interface()
+            print(f"You entered {user_choice}\n")
+            print("Ending program now.\n")
+            quit()
             break
         else:
             print(f"'You provided {user_choice}")
-            print("Invalid choice made.")
-            print("Please choose a number between 0 - 5")
+            print("Invalid input.\n")
+            print("Please choose a number between 0 - 5\n")
             main()
 
 
@@ -112,7 +123,7 @@ def add_rating():
             update_inputs_worksheet(reviews_data)
             break
         return user_review
-    
+
     print("Please see options below")
     print("1: Add another rating")
     print("2: See main menu again")
