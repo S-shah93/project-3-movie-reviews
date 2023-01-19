@@ -77,14 +77,17 @@ def current_ratings():
     title_list = pd.DataFrame(m_titles.get_all_records())
     print(title_list.to_string(index=False))
 
+    # Displays list of options under movie ratings list
     print("Please see options below")
     print("1: Add your rating")
     print("2: Request movie to be added")
     print("3: See main menu again")
     print("0: End program")
 
+    # Input for user after viewing current ratings list
     c_ratings_choice = input("Enter a number between 0 - 1\n")
 
+    # Validates users input after current ratings list
     if c_ratings_choice == "1":
         add_rating()
     elif c_ratings_choice == "2":
@@ -100,27 +103,40 @@ def current_ratings():
         current_ratings()
 
 
+# Allows user to input their ratings into the current list
 def add_rating():
     """
-    # Get movie review input from the user.
+    Get movie review input from the user and updates google sheets.
+    Current ratings updates with users input.
     """
     while True:
-        print("Please enter your movie review")
+        # Displays current ratings list
+        l_titles = SHEET.worksheet("listings")
+        title_list = pd.DataFrame(l_titles.get_all_records())
+        print(title_list.to_string(index=False))
+
+        # Explination of how to input your ratings
+        print("Please enter your movie rating")
         print("Your review should be ten numbers, seperated by commas.")
         print("Example: 1,2,3,4,5,6,7,8,9,10\n")
         print("Please input 1 number between 1 - 10 for each title\n")
         print("Seperated by a comma ','\n")
+
+        # Users input for ratings
         review_str = input("Enter your data here: \n")
 
+        # Seperates inputs with a comma ','
         user_review = review_str.split(",")
 
+        # Validates users input and updates google sheet
         if validate_rating(user_review):
             print("Data is valid!")
             reviews_data = [int(num) for num in user_review]
             update_inputs_worksheet(reviews_data)
             break
         return user_review
-
+    
+    # Options for users after input is complete
     print("Please see options below")
     print("1: Add another rating")
     print("2: See main menu again")
