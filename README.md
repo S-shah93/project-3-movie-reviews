@@ -27,15 +27,12 @@ Movie Ratings is an application that gets the viewers opinion and rates movies. 
     * [Known Bugs](<#known-bugs>)
     * [Unfixed Bugs](<#unfixed-bugs>)
 
-    
 * [**Deployment**](<#deployment>)
-
 
 * [**Credits**](<#credits>)
     * [Content](<#content>)
 
 * [**Acknowledgements**](<#acknowledgements>)
-
 
 # Site User Goals
 Movie Ratings application aims to provied information of our current movie listings and allow the user to input their own rating and join the community in sharing their 
@@ -70,7 +67,6 @@ To store all the data from the application I choice to use [Google Sheets](https
     * lowest
 
 The workbook contains 6 spreadsheets meet user inputs and request needs for the functions.
-
 
 # Features
 When the application starts it calls the main function which presents a menu of options for the user to select. Each on of these options relate to a different function to help the user navigate the application. The list consists of 6 options that allows the user to either view the information in different ways or add their ratings to the current list and request their movie title to be added to the list.
@@ -230,8 +226,7 @@ The project was deployed to [Heroku](https://www.heroku.com). To deploy, please 
 
 8. Scroll down on the deploy page and choose deployment type. Choose to enable automatic deployments if you want to and then  click 'Deploy Branch'.
 
-
-The live link to the 'WOM Record Collection' Github repository can be found [here](https://project-3-movie-reviews.herokuapp.com/).
+The live link to the 'Movie Ratings' Github repository can be found [here](https://github.com/S-shah93/project-3-movie-reviews).
 
 ## How To Fork The Repository On GitHub
 
@@ -257,7 +252,7 @@ These three projects helped me decide on the type of application I wanted to bui
 
 * In addition, many blogs from W3Schools, blogs online on what function to use and Youtube videos were researched in regards to the python functions.
 
-* Code Institutes videos on how to deploy the project were benifitial.
+* Code Institutes videos on how to deploy the project were beneficial.
 
 # Acknowledgements
 The application 'movie ratings' was completed as the Portfolio Project #3 (*Python*) for the Full Stack Software Development Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for relevant feedback during the project.
