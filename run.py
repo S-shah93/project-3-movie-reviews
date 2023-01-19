@@ -267,7 +267,7 @@ def m_top():
 
     # Options for after viewing the highest rated movie
     print("1: See lowest rated")
-    print("2: Add your rating to the current list\n")
+    print("2: Add your rating to the current list")
     print("3: See main menu")
     print("0: End program\n")
 
