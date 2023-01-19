@@ -137,7 +137,7 @@ def add_rating():
             update_inputs_worksheet(reviews_data)
             break
         return user_review
-    
+
     # Options for users after input is complete
     print("Please see options below")
     print("1: Add another rating")
@@ -216,7 +216,7 @@ def add_to_list():
             update_requests_worksheet(user_title)
             break
         return user_request
-    
+
     # Options for users after input is complete
     print("\n")
     print("Please see options below")
@@ -298,7 +298,7 @@ def m_lowest():
     print(lowest_table.to_string(index=False))
     print("\n")
 
-    # Options for after viewing the lowest rated movie 
+    # Options for after viewing the lowest rated movie
     print("1: See highest rated")
     print("2: Add your rating to the current list")
     print("2: See main menu")

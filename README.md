@@ -18,7 +18,7 @@ Movie Ratings is an application that gets the viewers opinion and rates movies. 
     * [Flow Chart](<#Flow Chart>)
 
 
-* [**Features Left to Implement**](<#project-overview>)
+* [**Features Left to Implement**](<#features-left-to-implement>)
     * [Site Structure](<#site-structure>)
     * [Flow Chart](<#Flow Chart>)
 
@@ -118,6 +118,56 @@ Option 4 allows the user to view the highest rated movie in the current list and
 ![option 4](assets/images/readme-images/option-4.PNG)
 </details><br/>
 
-
 ## Lowest Rated Movie
 Option 5 allows the user to view the lowest rated movie in the current list and is given options to either see the highest rated movie, add their rating to the current list, see the main menu or end the program.
+
+<details><summary><b>Option 5</b></summary>
+
+![option 5](assets/images/readme-images/option-5.PNG)
+</details><br/>
+
+## End Program
+This options ends the program.
+
+<details><summary><b>Option 0</b></summary>
+
+![option 0](assets/images/readme-images/option-0.PNG)
+</details><br/>
+
+# Features Left to Implement
+
+## Add Comments
+* This option allows the user to add a comment with their rating allowing the user to express their rating into words.
+
+## Remove User Inputs
+* This would allow the user to remove already inputed data. Incase the user made a typo.
+
+## Search Movie Titles
+* This would allow the user to search our list and see if that movie is in the list and allow them to enter a comment and/or a rating.
+
+# Technologies Used
+
+## Languages
+
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language)) - Provides the functionality for the application.
+
+## Frameworks, Libraries & Software
+
+* [Google Sheets](https://www.google.co.uk/sheets/about/) - Used to host the application data.
+* [Github](https://github.com/) - Used to host and edit the website.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku) - A cloud platform that the application is deployed to.
+
+## Python Packages
+* [GSpread](https://pypi.org/project/gspread/) - A Python API for Google Sheets that makes it possible to transfer data between the application and the Google Sheet.
+* [pandas](https://www.w3schools.com/python/pandas/pandas_intro.asp) - Pandas is a Python library used for working with data sets. It has functions for analyzing, cleaning, exploring, and manipulating data.
+
+# Testing
+
+## Code Validation
+The Movie Rating application has been tested through [Code Institute Validator](https://pep8ci.herokuapp.com/)
+
+<details><summary><b>Python Linter</b></summary>
+
+![python linter](assets/images/readme-images/ci-python-linter.PNG)
+</details><br/>
+
