@@ -253,9 +253,10 @@ def update_requests_worksheet(user_title):
     print("Your review has been upoaded sucessfully.\n")
 
 
+# Function to display top rated movie in current list
 def m_top():
     """
-    Function to search the top rated movie
+    Function to see the top rated movie
     """
     top_movie = SHEET.worksheet("highest")
     top_table = pd.DataFrame(top_movie.get_all_records())
@@ -263,7 +264,8 @@ def m_top():
     print("\n")
 
     print("1: See lowest rated")
-    print("2: See main menu")
+    print("2: Add rating to current list\n")
+    print("3: See main menu")
     print("0: End program\n")
 
     m_top_choice = input("Enter a number between 0 - 2\n")
@@ -271,6 +273,8 @@ def m_top():
     if m_top_choice == "1":
         m_lowest()
     elif m_top_choice == "2":
+        add_rating()
+    elif m_top_choice == "3":
         interface()
     elif m_top_choice == "0":
         print("Thank you for visiting!")
