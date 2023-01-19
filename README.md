@@ -4,42 +4,37 @@ Movie Ratings is an application that gets the viewers opinion and rates movies. 
 
 # Table of Contents
 
-* [**Project**](<#project-overview>)
+* [**Project**](<#project>)
     * [Site User Goals](<#site-user-goals>)
     * [Site Owners Goal](<#site-owner-goals>)
 
-* [**User Experience(UX)**](<#project-overview>)
+* [**User Experience(UX)**](<#user-experience>)
     * [Site Structure](<#site-structure>)
     * [Flow Chart](<#flow-chart>)
     * [Data Model](<#data-model>)
 
-* [**Features**](<#project-overview>)
-    * [Site Structure](<#site-structure>)
-    * [Flow Chart](<#Flow Chart>)
-
+* [**Features**](<#features>)
 
 * [**Features Left to Implement**](<#features-left-to-implement>)
-    * [Site Structure](<#site-structure>)
-    * [Flow Chart](<#Flow Chart>)
+    
+* [**Technologies Used**](<#technologies-used>)
+    * [Languages](<#languages>)
+    * [Frameworks, Libraries & Software](<#frameworks,-libraries-&-software>)
+    * [Python Packages](<#python-packages>)
+
+* [**Testing**](<#testing>)
+    * [Code Validation](<#code-validation>)
+    * [Known Bugs](<#known-bugs>)
+    * [Unfixed Bugs](<#unfixed-bugs>)
 
     
-* [**Technologies Used**](<#project-overview>)
-    * [Site Structure](<#site-structure>)
-    * [Flow Chart](<#Flow Chart>)
+* [**Deployment**](<#deployment>)
 
 
-* [**Testing**](<#project-overview>)
-    * [Site Structure](<#site-structure>)
-    * [Flow Chart](<#Flow Chart>)
+* [**Credits**](<#credits>)
+    * [Content](<#content>)
 
-    
-* [**Deployment**](<#project-overview>)
-
-
-* [**Credits**](<#project-overview>)
-
-
-* [**Acknowledgements**](<#project-overview>)
+* [**Acknowledgements**](<#acknowledgements>)
 
 
 # Site User Goals
@@ -53,6 +48,14 @@ The goal of the site is to provide an application where the user can add their o
 
 # Site Structure
 Movie Rating's is a terminal based application that is being presented in a single page website. When the application starts the user is welcomed and presented with a list of options to either view the current ratings, adding their own rating and movie title and viewing the highest rated and lowest rated movies. You can read more about the choices in the [Features](<#Features>).
+
+# Flow Chart
+The flow chart for this application was made with the online service Lucid App. This chart gives you an overview of the application.
+
+<details><summary><b>Flow Chart</b></summary>
+
+![Flow Chart](assets/images/readme-images/lucid-chart.png)
+</details><br/>
 
 # Data Model
 To store all the data from the application I choice to use [Google Sheets](https://www.google.co.uk/sheets/about/). All data is being transfered between the application and the google sheet.
@@ -171,3 +174,90 @@ The Movie Rating application has been tested through [Code Institute Validator](
 ![python linter](assets/images/readme-images/ci-python-linter.PNG)
 </details><br/>
 
+## Known Bugs
+<details><summary><b>Highest rated display with no index</b></summary>
+
+![highest bub](assets/images/readme-images/display%20highest%20rated%20table%20with%20no%20index.PNG)
+</details><br/>
+
+<details><summary><b>User Rating Bug 1</b></summary>
+
+![user rating bug 1](assets/images/readme-images/rating-bug-1.PNG)
+</details><br/>
+
+<details><summary><b>User Rating Bug 1 spreadsheet</b></summary>
+
+![user rating bug 2](assets/images/readme-images/rating-bug-2.PNG)
+</details><br/>
+
+## Unfixed Bugs
+By the end I was unable to enable the feature to allow the user to input their titles to be added to the list. I hope to have this working for the next update.
+
+<details><summary><b>add-title-bug</b></summary>
+
+![add-title-bug](assets/images/readme-images/add-title-bug.PNG)
+</details><br/>
+
+# Deployment
+
+## Deployment To Heroku
+
+The project was deployed to [Heroku](https://www.heroku.com). To deploy, please follow the process below:
+
+1. The first step is to log in to Heroku (or create an account if needed).
+
+<details><summary><b>Step 1</b></summary>
+
+![Step 1](assets/images/readme-images/step-1.PNG)
+</details><br />
+
+2. In the top right corner there is a button that is labeled 'New'. Click that and then select 'Create new app'.
+
+<details><summary><b>Step 2</b></summary>
+
+![Step 2](assets/images/readme-images/step-2.PNG)
+</details><br />
+
+3. Then you need to enter an application name that needs is unique. When you have chosen the name, choose your region and click 'Create app".
+
+4. On the next page, click the 'Settings' tab and find the "Config Vars" section. When you have found it, click "Reveal Config Vars". Now it's time to add values. In the 'movie reviews' case I needed to add two values. The first one was the credentials (KEY input field = "CREDS", VALUE input field = "your credentials", click the 'Add' button. Next I had to add another key, enter "PORT" in the KEY input field and "8000" in the VALUE field, click the 'Add' button.
+
+5. Next step is to add buildpacks to the application which will run when the application is deployed. The reason why this is needed is because all dependencies and configurations will be installed for the application. To do this you scroll down to the buildpacks section on the settings page and click the button 'Add buildpack'.
+
+6. Add "Python" and "node.js". It is important that Python is listed above node.js. If it's not you can sort it by dragging and dropping.
+
+7. Now it's time for deployment. Scroll to the top of the settings page and click the 'Deploy' tab. For deployment method, select 'Github'. Search for the repository name you want to deploy and then click connect.
+
+8. Scroll down on the deploy page and choose deployment type. Choose to enable automatic deployments if you want to and then  click 'Deploy Branch'.
+
+
+The live link to the 'WOM Record Collection' Github repository can be found [here](https://project-3-movie-reviews.herokuapp.com/).
+
+## How To Fork The Repository On GitHub
+
+To fork the repository, take these steps:
+
+1. After logging in to GitHub, locate the repository. On the top right side of the page there is a 'Fork' button. Click on the button to create a copy of the original repository.
+
+<details><summary><b>Github Fork</b></summary>
+
+![Fork](assets/images/readme-images/fork.PNG)
+</details><br />
+
+# Credits
+
+## Content
+
+These three projects helped me decide on the type of application I wanted to build, seeing how their applications worked in the terminal gave me ideas for my own. 
+* Inspiration taken from [Joao4569](https://github.com/Joao4569/survey-data-capture-and-analyse) and [Jca-Dev](https://github.com/Jca-Dev/Project_3_Python)
+
+* Template for read.me was inspired by [worldofmarcus](https://github.com/worldofmarcus/project-portfolio-3#additional-testing)
+
+* All text content written by Sumair Shah.
+
+* In addition, many blogs from W3Schools, blogs online on what function to use and Youtube videos were researched in regards to the python functions.
+
+* Code Institutes videos on how to deploy the project were benifitial.
+
+# Acknowledgements
+The application 'movie ratings' was completed as the Portfolio Project #3 (*Python*) for the Full Stack Software Development Diploma at the [Code Institute](https://codeinstitute.net/). I would like to thank my mentor [Precious Ijege](https://www.linkedin.com/in/precious-ijege-908a00168/) for relevant feedback during the project.
