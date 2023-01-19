@@ -14,8 +14,6 @@ GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
 # This function acts as the main menu
-
-
 def interface():
     """
     This function allows the user to navigate through
@@ -34,11 +32,9 @@ def interface():
         print("0: End program")
 
         # Users initial input choice
-
         user_choice = input("Enter your choice: \n")
 
         # Validates users input for main menu
-
         if user_choice == "1":
             print(f"You entered {user_choice}\n")
             current_ratings()
@@ -71,11 +67,12 @@ def interface():
             main()
 
 
+# This function displays a list of the current ratings with options
 def current_ratings():
     """
     Function to list all movies
     """
-    print("Test 1")
+    # Displays list of current movie titles and their ratings
     m_titles = SHEET.worksheet("current")
     title_list = pd.DataFrame(m_titles.get_all_records())
     print(title_list.to_string(index=False))
