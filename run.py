@@ -157,9 +157,6 @@ def add_rating():
         print("Please choose a number between 0 - 2")
         current_ratings()
 
-    print("Thank you for your review\n")
-    print("Please run program again to view or review")
-
 
 # Checks users input is exactly 10 values
 def validate_rating(values):
@@ -212,6 +209,7 @@ def add_to_list():
         print(f"You entered {user_request}\n")
         print("Thank you for your request\n")
         print("We will review your request and add it to our list.\n")
+        print("Please run program again to restart\n")
         if user_request is True:
             print("Data is valid!\n")
             user_title = [str(value) for value in user_request]
