@@ -13,6 +13,7 @@ SCOPE_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPE_CREDS)
 SHEET = GSPREAD_CLIENT.open('movie_reviews')
 
+
 # This function acts as the main menu
 def interface():
     """
@@ -159,12 +160,14 @@ def add_rating():
     print("Please run program again to view or review")
 
 
+# Checks users input is exactly 10 values
 def validate_rating(values):
     """
     # Inside the try, converts all string values into integers.
     # Raises ValueError msg if strings cannot be converted into integers,
     # or if there aren't exctaly 10 values.
     """
+    # returns an integer value and checks value is = to 10 inputs
     try:
         [int(value) for value in values]
         if len(values) != 10:
